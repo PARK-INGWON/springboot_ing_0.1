@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        table {
+            width: 100%;
+            border-top: 1px solid #444444;
+            border-collapse: collapse;
+        }
+        th, td {
+            border-bottom: 1px solid #444444;
+            padding: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>게시판</h1>
+
+<table>
+    <thead>
+        <tr>
+            <td>순번</td>
+            <td>타이틀</td>
+            <td>등록자ID</td>
+            <td>등록일자</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="obj:${list}">
+            <td class="list" th:text="${obj.getNumber()}" ></td>
+            <td class="list" th:text="${obj.getTitle()}" ></td>
+            <td class="list" th:text="${obj.getCreateUserId()}" ></td>
+            <td class="list" th:text="${obj.getCreateData()}" ></td>
+        </tr>
+    </tbody>
+</table>
+
+<textarea cols="150" rows="15">
+
+TemplateBeta버전
+- IntelliJ Ultimate (무료30일 -이거써야 스프링부트를 좀더 쉽게 생성함...)
+- Spring boot 2.4.4
+[SpringWeb 추가, Lombok 추가(vo처리 plugin)]
+- sdk : java11(corretto-11.0.10)
+(이건 AWS지원으로..아마존꺼 받음)
+- 타임리프(템플릿엔진-api로 전달된 데이타를 손쉽게 동적으로 출력해주는 화면단 플러그인)
+
+
+- JPA 남음....123
+
+</textarea>
+
+</body>
+</html>
